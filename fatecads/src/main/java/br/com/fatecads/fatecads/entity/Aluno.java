@@ -1,4 +1,4 @@
-package br.com.fatecads.entity;
+package br.com.fatecads.fatecads.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
