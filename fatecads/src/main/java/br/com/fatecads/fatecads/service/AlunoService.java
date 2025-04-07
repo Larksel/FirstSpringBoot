@@ -30,5 +30,9 @@ public class AlunoService {
         alunoRepository.deleteById(id);
     }
 
-
+    // Método para buscar um aluno por id
+    public Aluno findById(Integer id) {
+        // Retorna o aluno com o id especificado ou null se não existir
+        return alunoRepository.findById(id).orElse(null);
+    }
 }

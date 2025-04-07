@@ -61,5 +61,15 @@ public class AlunoController {
         return "redirect:/alunos/listar";
     }
     
+    // Método para abrir o formulário de edição de aluno
+    @GetMapping("/editar/{id}")
+    public String editarForm(@PathVariable Integer id, Model model) {
+        // Busca o aluno pelo id
+        Aluno aluno = alunoService.findById(id);
+        // Adiciona o aluno ao modelo
+        model.addAttribute("aluno", aluno);
+        
+        return "aluno/formularioAluno";
+    }
     
 }
