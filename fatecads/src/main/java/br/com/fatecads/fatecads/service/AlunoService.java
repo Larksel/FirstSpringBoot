@@ -19,11 +19,13 @@ public class AlunoService {
         //Retorna todos os alunos 
         return alunoRepository.findAll();
     }
+    
     //Método para salvar um aluno
     public Aluno save(Aluno aluno)
     {
         return alunoRepository .save(aluno);
     }
+
     // Método para excluir um aluno pelo id
     public void deleteById(Integer id)
     {
