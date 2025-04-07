@@ -78,7 +78,7 @@ form {
   justify-content: center;
   position: relative;
   background: white;
-  border: 0 none;
+  border: none;
   border-radius: 24px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   padding: 20px 30px;
@@ -116,4 +116,68 @@ textarea:focus {
   border: 1px solid #ee0979;
   outline-width: 0;
   transition: all 0.15s ease-in;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: space-evenly;
+}
+
+.w3-table,
+.w3-table-all {
+  border-collapse: collapse;
+  border-radius: 24px;
+  overflow: hidden;
+  border-spacing: 0;
+  max-width: 800px;
+  width: 100%;
+  display: table;
+  color: black;
+}
+.w3-table-all {
+  border: 1px solid #ccc;
+}
+.w3-bordered tr,
+.w3-table-all tr {
+  border-bottom: 1px solid #ddd;
+}
+.w3-striped tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+.w3-table-all tr:nth-child(odd) {
+  background-color: #fff;
+}
+.w3-table-all tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+.w3-hoverable tbody tr:hover,
+.w3-ul.w3-hoverable li:hover {
+  background-color: #ccc;
+}
+.w3-centered tr th,
+.w3-centered tr td {
+  text-align: center;
+}
+.w3-table td,
+.w3-table th,
+.w3-table-all td,
+.w3-table-all th {
+  padding: 8px 8px;
+  display: table-cell;
+  vertical-align: top;
+}
+.w3-table th:first-child,
+.w3-table td:first-child,
+.w3-table-all th:first-child,
+.w3-table-all td:first-child {
+  padding-left: 16px;
+}
+
+th {
+  text-align: left;
+}
+
+.centered {
+  text-align: center;
 }
