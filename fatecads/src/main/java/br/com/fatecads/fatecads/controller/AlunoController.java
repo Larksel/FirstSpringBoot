@@ -10,26 +10,56 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.fatecads.fatecads.entity.Aluno;
 import br.com.fatecads.fatecads.service.AlunoService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
 @RequestMapping("/alunos")
 public class AlunoController {
-  
-  @Autowired
-  private AlunoService alunoService;
+    
+    @Autowired
+    private AlunoService alunoService;
 
-  // Método para listar todos os alunos
-  @GetMapping("/listar")
-  public String listar(Model model) {
-    // Buscar todos os alunos
-    List<Aluno> alunos = alunoService.findAll();
+    //Método para listar todos os alunos
+    @GetMapping("/listar")
+    public String listar(Model model) {
+        //Busca todos os alunos
+        List<Aluno> alunos = alunoService.findAll();
+        //Adiciona os alunos 
+        model.addAttribute("alunos", alunos);
+        //Retorna a página de lista de alunos
+        return "/aluno/listaAlunos";
+    }
+    
+    //Método para abrir o formulário de criação de alunos
+    @GetMapping("/criar")
+    public String criarFrom( Model model) {
+        //adiciona um novo aluno ao model
+        model.addAttribute("aluno", new Aluno());
+        //retorna a página do formulário de alunos
+        return "aluno/formularioAluno";
+    }
 
-    // Adiciona os alunos
-    model.addAttribute("alunos", alunos);
-
-    // Retorna a página da lista
-    return "/aluno/listaAlunos";
-  }
-
+    @PostMapping("salvar")
+    public String salvar(@ModelAttribute Aluno aluno) {
+        //Salva o aluno
+        alunoService.save(aluno);
+        //Redireciona para a lista de alunos
+        return "redirect:/alunos/listar";
+    }
+    
+    //Método para exlcuir um aluno
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable Integer id) 
+    {
+        //Excluir o aluno
+        alunoService.deleteById(id);
+        return "redirect:/alunos/listar";
+    }
+    
+    
 }
