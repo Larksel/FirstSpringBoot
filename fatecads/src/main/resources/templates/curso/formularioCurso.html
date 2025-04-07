@@ -8,19 +8,21 @@
 </head>
 <body>
   <h1>Cadastrar Cursos</h1>
-  <form th:action="@{/cursos/salvar}" method="POST" th:object="${curso}">
-    <input type="hidden" name="idCurso" th:field="*{idCurso}" readonly>
-    <br>
-    <label for="nomeCurso">Nome: </label>
-    <input type="text" name="nomeCurso" th:field="*{nomeCurso}">
-    <br>
-    <label for="chCurso">Carga Horária: </label>
-    <input type="number" name="chCurso" th:field="*{chCurso}">
-    <br>
-    <label for="periodoCurso">Período: </label>
-    <input type="text" name="periodoCurso" th:field="*{periodoCurso}">
-
-    <input class="button" type="submit" name="cadastrar" value="Cadastrar">
-  </form>
+  <div class="container">
+    <form th:action="@{/cursos/salvar}" method="POST" th:object="${curso}">
+      <input type="hidden" name="idCurso" th:field="*{idCurso}" readonly>
+  
+      <label for="nomeCurso">Nome: </label>
+      <input type="text" name="nomeCurso" th:field="*{nomeCurso}">
+  
+      <label for="chCurso">Carga Horária: </label>
+      <input type="number" name="chCurso" th:field="*{chCurso}">
+  
+      <label for="periodoCurso">Período: </label>
+      <input type="text" name="periodoCurso" th:field="*{periodoCurso}">
+  
+      <input class="button" type="submit" name="cadastrar" value="Cadastrar">
+    </form>
+  </div>
 </body>
 </html>

@@ -8,32 +8,33 @@
 </head>
 <body>
   <h1>Lista de Alunos</h1>
-  <h3><a href="/alunos/criar">Cadastrar</a></h3>
-
-  <!-- Tabela para exibir os alunos -->
-  <table border="1">
-    <tr>
-      <td colspan="7" style="text-align: center;">Lista de Alunos</td>
-    </tr>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Endereço</th>
-      <th>Telefone</th>
-      <th>RA</th>
-      <th colspan="2">Ações</th>
-    </tr>
-    <tr th:each="aluno : ${alunos}">
-      <td th:text="${aluno.idAluno}">*</td>
-      <td th:text="${aluno.nomeAluno}">*</td>
-      <td th:text="${aluno.endAluno}">*</td>
-      <td th:text="${aluno.telAluno}">*</td>
-      <td th:text="${aluno.raAluno}">*</td>
-      <td>
-        <a class="button" th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
-        <a class="button" th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
-      </td>
-    </tr>
-  </table>
+  <div class="container">
+    <h3 class="button"><a href="/alunos/criar">Cadastrar</a></h3>
+    <!-- Tabela para exibir os alunos -->
+    <table border="1">
+      <tr>
+        <td colspan="7" style="text-align: center;">Lista de Alunos</td>
+      </tr>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>RA</th>
+        <th colspan="2">Ações</th>
+      </tr>
+      <tr th:each="aluno : ${alunos}">
+        <td th:text="${aluno.idAluno}">*</td>
+        <td th:text="${aluno.nomeAluno}">*</td>
+        <td th:text="${aluno.endAluno}">*</td>
+        <td th:text="${aluno.telAluno}">*</td>
+        <td th:text="${aluno.raAluno}">*</td>
+        <td>
+          <a class="button" th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
+          <a class="button" th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
+        </td>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
