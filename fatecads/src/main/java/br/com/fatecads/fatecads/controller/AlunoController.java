@@ -42,7 +42,7 @@ public class AlunoController {
         return "aluno/formularioAluno";
     }
 
-    @PostMapping("salvar")
+    @PostMapping("/salvar")
     public String salvar(@ModelAttribute Aluno aluno) {
         //Salva o aluno
         alunoService.save(aluno);
