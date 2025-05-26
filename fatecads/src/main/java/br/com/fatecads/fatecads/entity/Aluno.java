@@ -30,6 +30,8 @@ public class Aluno {
     @Column(nullable = false, length = 11)
     private String telAluno;
 
-    private Integer raAluno; 
+    private Integer raAluno;
     
+    @Column(nullable = false)
+    private Integer idCurso;
 }

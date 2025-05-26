@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Cadastrar Alunos</h1>
+  <h1><a href="/">Cadastrar Alunos</a></h1>
   <div class="container">
     <form th:action="@{/alunos/salvar}" method="POST" th:object="${aluno}">
       <input type="hidden" name="idAluno" th:field="*{idAluno}" readonly>
@@ -23,7 +23,10 @@
   
       <label for="raAluno">RA: </label>
       <input type="text" name="raAluno" th:field="*{raAluno}">
-  
+
+      <label for="idCurso">ID do Curso: </label>
+      <input type="text" name="idCurso" th:field="*{idCurso}">
+
       <input class="button" type="submit" name="cadastrar" value="Cadastrar">
     </form>
   </div>

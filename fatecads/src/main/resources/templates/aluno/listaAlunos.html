@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Lista de Alunos</h1>
+  <h1><a href="/">Lista de Alunos</a></h1>
   <div class="container">
     <h3 class="button"><a href="/alunos/criar">Cadastrar</a></h3>
     <!-- Tabela para exibir os alunos -->
@@ -21,6 +21,7 @@
         <th>Endereço</th>
         <th>Telefone</th>
         <th>RA</th>
+        <th>ID do Curso</th>
         <th class="centered" colspan="2">Ações</th>
       </tr>
       <tr th:each="aluno : ${alunos}">
@@ -29,6 +30,7 @@
         <td th:text="${aluno.endAluno}">*</td>
         <td th:text="${aluno.telAluno}">*</td>
         <td th:text="${aluno.raAluno}">*</td>
+        <td th:text="${aluno.idCurso}">*</td>
         <td>
           <div class="action-buttons">
             <a class="button" th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
