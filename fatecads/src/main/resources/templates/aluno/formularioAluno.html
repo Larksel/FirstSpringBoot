@@ -10,22 +10,23 @@
   <h1><a href="/">Cadastrar Alunos</a></h1>
   <div class="container">
     <form th:action="@{/alunos/salvar}" method="POST" th:object="${aluno}">
+      <span>Cadastrar Aluno</span>
       <input type="hidden" name="idAluno" th:field="*{idAluno}" readonly>
   
       <label for="nomeAluno">Nome: </label>
-      <input type="text" name="nomeAluno" th:field="*{nomeAluno}">
+      <input type="text" name="nomeAluno" placeholder="Nome" th:field="*{nomeAluno}">
   
       <label for="endAluno">Endereço: </label>
-      <input type="text" name="endAluno" th:field="*{endAluno}">
+      <input type="text" name="endAluno" placeholder="Endereço" th:field="*{endAluno}">
   
       <label for="telAluno">Telefone: </label>
-      <input type="text" name="telAluno" th:field="*{telAluno}">
+      <input type="text" name="telAluno" placeholder="Telefone" th:field="*{telAluno}">
   
       <label for="raAluno">RA: </label>
-      <input type="text" name="raAluno" th:field="*{raAluno}">
+      <input type="text" name="raAluno" placeholder="RA" th:field="*{raAluno}">
 
       <label for="idCurso">ID do Curso: </label>
-      <input type="text" name="idCurso" th:field="*{idCurso}">
+      <input type="text" name="idCurso" placeholder="ID do Curso" th:field="*{idCurso}">
 
       <input class="button" type="submit" name="cadastrar" value="Cadastrar">
     </form>
