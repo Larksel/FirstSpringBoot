@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.fatecads.fatecads.entity.Aluno;
 import br.com.fatecads.fatecads.service.AlunoService;
+import br.com.fatecads.fatecads.service.CursoService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,9 @@ public class AlunoController {
     
     @Autowired
     private AlunoService alunoService;
+
+    @Autowired
+    private CursoService cursoService;
 
     //Método para listar todos os alunos
     @GetMapping("/listar")
@@ -38,6 +43,10 @@ public class AlunoController {
     public String criarFrom( Model model) {
         //adiciona um novo aluno ao model
         model.addAttribute("aluno", new Aluno());
+
+        //adiciona os cursos
+        model.addAttribute("cursos", cursoService.findAll());
+
         //retorna a página do formulário de alunos
         return "aluno/formularioAluno";
     }
@@ -66,6 +75,7 @@ public class AlunoController {
         Aluno aluno = alunoService.findById(id);
         // Adiciona o aluno ao modelo
         model.addAttribute("aluno", aluno);
+        model.addAttribute("cursos", cursoService.findAll());
         
         return "aluno/formularioAluno";
     }

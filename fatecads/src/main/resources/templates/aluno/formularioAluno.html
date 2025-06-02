@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Alunos</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <h1><a href="/">Cadastrar Alunos</a></h1>
-  <div class="container">
-    <form th:action="@{/alunos/salvar}" method="POST" th:object="${aluno}">
-      <span>Cadastrar Aluno</span>
-      <input type="hidden" name="idAluno" th:field="*{idAluno}" readonly>
-  
-      <label for="nomeAluno">Nome: </label>
-      <input type="text" name="nomeAluno" placeholder="Nome" th:field="*{nomeAluno}">
-  
-      <label for="endAluno">Endereço: </label>
-      <input type="text" name="endAluno" placeholder="Endereço" th:field="*{endAluno}">
-  
-      <label for="telAluno">Telefone: </label>
-      <input type="text" name="telAluno" placeholder="Telefone" th:field="*{telAluno}">
-  
-      <label for="raAluno">RA: </label>
-      <input type="text" name="raAluno" placeholder="RA" th:field="*{raAluno}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1><a href="/">Cadastrar Alunos</a></h1>
+    <div class="container">
+      <form th:action="@{/alunos/salvar}" method="POST" th:object="${aluno}">
+        <span>Cadastrar Aluno</span>
+        <input type="hidden" name="idAluno" th:field="*{idAluno}" readonly />
 
-      <label for="idCurso">ID do Curso: </label>
-      <input type="text" name="idCurso" placeholder="ID do Curso" th:field="*{idCurso}">
+        <label for="nomeAluno">Nome: </label>
+        <input
+          type="text"
+          name="nomeAluno"
+          placeholder="Nome"
+          th:field="*{nomeAluno}"
+        />
 
-      <input class="button" type="submit" name="cadastrar" value="Cadastrar">
-    </form>
-  </div>
-</body>
+        <label for="endAluno">Endereço: </label>
+        <input
+          type="text"
+          name="endAluno"
+          placeholder="Endereço"
+          th:field="*{endAluno}"
+        />
+
+        <label for="telAluno">Telefone: </label>
+        <input
+          type="text"
+          name="telAluno"
+          placeholder="Telefone"
+          th:field="*{telAluno}"
+        />
+
+        <label for="raAluno">RA: </label>
+        <input
+          type="text"
+          name="raAluno"
+          placeholder="RA"
+          th:field="*{raAluno}"
+        />
+
+        <label for="idCurso">
+          Curso:
+        </label>
+        <select th:field="*{curso}" name="idCurso" id="idCurso">
+          <option value="" disabled selected>Selecione o curso...</option>
+          <option
+            th:each="curso : ${cursos}"
+            th:text="${curso.nomeCurso}"
+            th:value="${curso.idCurso}"
+          ></option>
+        </select>
+
+        <input
+          class="button"
+          type="submit"
+          name="cadastrar"
+          value="Cadastrar"
+        />
+      </form>
+    </div>
+  </body>
 </html>

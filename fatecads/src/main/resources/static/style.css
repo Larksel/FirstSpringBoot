@@ -115,14 +115,15 @@ label {
 
 /*inputs*/
 input,
-textarea {
+textarea,
+select {
   border: none;
   margin-bottom: 10px;
   width: 100%;
   font-weight: 500;
   font-size: 15px;
   line-height: 1.5;
-  color: #666666;
+  color: #999;
   display: block;
   background: #e6e6e6;
   height: 50px;
@@ -131,7 +132,8 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   box-shadow: none;
   outline-width: 0;
   transition: all 0.15s ease-in;
@@ -158,13 +160,13 @@ textarea:focus {
   border: 1px solid #ccc;
   background-color: #ccc;
 }
-.w3-striped tbody tr:nth-child(even) {
+.w3-striped tbody tr:nth-child(odd) {
   background-color: #f1f1f1;
 }
-.w3-table-all tr:nth-child(odd) {
+.w3-table-all tr:nth-child(even) {
   background-color: #fff;
 }
-.w3-table-all tr:nth-child(even) {
+.w3-table-all tr:nth-child(odd) {
   background-color: #f1f1f1;
 }
 .w3-hoverable tbody tr:hover,
@@ -181,7 +183,7 @@ textarea:focus {
 .w3-table-all th {
   padding: 8px 8px;
   display: table-cell;
-  vertical-align: top;
+  vertical-align: center;
 }
 .w3-table th:first-child,
 .w3-table td:first-child,
