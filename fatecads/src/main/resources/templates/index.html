@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema Escolar</title>
-  <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema FatecADS</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-  <h1>Sistema FatecADS</h1>
-  <div class="container">
-    <h3 class="button"><a href="/alunos/listar">Gerenciar Alunos</a></h3>
-    <h3 class="button"><a href="/cursos/listar">Gerenciar Cursos</a></h3>
-  </div>
+<body style="background-color: #e0ffe0;">
+    <h1 style="text-align: center;">FatecADS</h1>
+    <h2 style="text-align: center;">Sistema Acadêmico</h2>
+
+    <p style="text-align: center;">
+        <img src="../static/images/logo.png" height="250px" width="250px">
+    </p>
+    <div style="text-align: center;">
+        <form action="/login" method="get" style="display: inline;">
+            <button type="submit" style="background-color: hsl(207, 100%, 60%);
+                color:white; padding: 10px 20px; border: none;
+                border-radius: 5px;">Login</button>
+        </form>
+
+        <form action="/usuarios/criar" method="get" style="display: inline;">
+            <button type="submit" style="background-color: green;
+                color:white; padding: 10px 20px; border: none;
+                border-radius: 5px;">Cadastre-se</button>
+        </form>
+    </div>
+
+
+    
 </body>
 </html>
