@@ -11,6 +11,11 @@
   <div class="container">
     <h3 class="button"><a href="/alunos/listar">Gerenciar Alunos</a></h3>
     <h3 class="button"><a href="/cursos/listar">Gerenciar Cursos</a></h3>
+
+    <a th:href="@{/logout}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+    <form th:action="@{/logout}" id="logout-form" method="post">
+      
+    </form>
   </div>
 </body>
 </html>
