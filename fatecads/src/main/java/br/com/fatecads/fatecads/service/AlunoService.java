@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.com.fatecads.fatecads.dto.AlunoTelefone;
 import br.com.fatecads.fatecads.entity.Aluno;
 import br.com.fatecads.fatecads.repository.AlunoRepository;
 
@@ -36,5 +38,9 @@ public class AlunoService {
     public Aluno findById(Integer id) {
         // Retorna o aluno com o id especificado ou null se não existir
         return alunoRepository.findById(id).orElse(null);
+    }
+
+    public List<AlunoTelefone> buscarNomesTelefones() {
+        return alunoRepository.buscarNomesTelefone();
     }
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Alunos</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1><a href="/">Lista de Alunos</a></h1>
+    <div class="container">
+      <table class="w3-table-all">
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+        </tr>
+        <tr th:each="aluno : ${alunos}">
+          <td th:text="${aluno.nomeAluno}">*</td>
+          <td th:text="${aluno.telAluno}">*</td>
+        </tr>
+      </table>
+    </div>
+    <p style="text-align: center;"><a href="/home">Voltar</a></p>
+  </body>
+</html>
